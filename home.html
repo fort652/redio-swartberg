@@ -11,18 +11,19 @@
     <script>
       tailwind.config = { theme: { extend: { fontFamily: { montserrat: ["Montserrat", "sans-serif"] } } } };
     </script>
+    <link rel="stylesheet" href="animations.css" />
   </head>
-  <body class="font-montserrat m-0 p-0">
+  <body class="font-montserrat m-0 p-0 overflow-x-hidden">
     <div class="relative w-full flex justify-center items-center min-h-[500px] lg:min-h-[600px] py-16 lg:py-0" style="background-image: url('swartberg1.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-      <div class="absolute inset-0 bg-black/50" aria-hidden="true"></div>
-      <div class="relative z-10 w-full flex flex-col items-center justify-center gap-8 mx-auto p-6 text-center" style="max-width: 1040px">
-        <div class="flex flex-col gap-4 items-center">
-          <h1 class="font-montserrat text-[40px] lg:text-[64px] leading-tight text-white font-bold drop-shadow-lg">Radio Swartberg</h1>
+      <div class="absolute inset-0 bg-black/50 hero-overlay-pulse" aria-hidden="true"></div>
+      <div class="relative z-10 w-full flex flex-col items-center justify-center gap-8 mx-auto p-6 text-center stagger-children" style="max-width: 1040px">
+        <div class="flex flex-col gap-4 items-center stagger-child">
+          <h1 class="font-montserrat text-[40px] lg:text-[64px] leading-tight text-white font-bold drop-shadow-lg animate-float">Radio Swartberg</h1>
           <p class="font-montserrat font-normal text-base lg:text-lg text-white/95 max-w-md drop-shadow lang-af">Jou stem uit die berge. Musiek, nuus en gemeenskap.</p>
           <p class="font-montserrat font-normal text-base lg:text-lg text-white/95 max-w-md drop-shadow lang-en hidden">Your voice from the mountains. Music, news, and community.</p>
         </div>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto">
-          <a href="schedule.html" target="content-frame" class="flex items-center justify-center px-6 py-3 rounded-lg shadow-lg w-full sm:w-auto font-montserrat font-semibold text-base bg-[#383840] text-white hover:bg-[#4a4a52] transition-colors border border-white/30">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto stagger-child">
+          <a href="schedule.html" target="content-frame" class="btn-glow flex items-center justify-center px-6 py-3 rounded-lg shadow-lg w-full sm:w-auto font-montserrat font-semibold text-base bg-[#383840] text-white hover:bg-[#4a4a52] transition-colors border border-white/30">
             <span class="lang-af">Rooster</span>
             <span class="lang-en hidden">Schedule</span>
           </a>
@@ -30,7 +31,7 @@
       </div>
     </div>
 
-    <section class="w-full max-w-4xl mx-auto px-6 py-16">
+    <section class="w-full max-w-4xl mx-auto px-6 py-16 opacity-0 animate-fade-in-up animate-delay-2">
       <h2 class="text-2xl lg:text-3xl font-bold text-[#383840] mb-6">
         <span class="lang-af">Ons Storie</span>
         <span class="lang-en hidden">Our Story</span>
@@ -44,28 +45,28 @@
     </section>
 
     <section class="w-full bg-gray-100 py-16">
-      <div class="max-w-4xl mx-auto px-6">
+      <div class="max-w-4xl mx-auto px-6 opacity-0 animate-fade-in-up animate-delay-3">
         <h2 class="text-2xl lg:text-3xl font-bold text-[#383840] mb-8">
           <span class="lang-af">Programme</span>
           <span class="lang-en hidden">Programs</span>
         </h2>
-        <ul class="grid gap-4 sm:grid-cols-2">
-          <li class="bg-white rounded-lg p-4 shadow-sm">
+        <ul class="grid gap-4 sm:grid-cols-2 stagger-children">
+          <li class="stagger-child bg-white rounded-lg p-4 shadow-sm hover-lift">
             <h3 class="font-semibold text-[#383840] mb-1">Oggendreeks</h3>
             <p class="text-sm text-gray-600 lang-af">06:00 – 09:00. Musiek en nuus vir die oggend.</p>
             <p class="text-sm text-gray-600 lang-en hidden">06:00 – 09:00. Music and news for the morning.</p>
           </li>
-          <li class="bg-white rounded-lg p-4 shadow-sm">
+          <li class="stagger-child bg-white rounded-lg p-4 shadow-sm hover-lift">
             <h3 class="font-semibold text-[#383840] mb-1">Middagtreffer</h3>
             <p class="text-sm text-gray-600 lang-af">12:00 – 15:00. Jou gunsteling treffers.</p>
             <p class="text-sm text-gray-600 lang-en hidden">12:00 – 15:00. Your favourite hits.</p>
           </li>
-          <li class="bg-white rounded-lg p-4 shadow-sm">
+          <li class="stagger-child bg-white rounded-lg p-4 shadow-sm hover-lift">
             <h3 class="font-semibold text-[#383840] mb-1">Saans met Swartberg</h3>
             <p class="text-sm text-gray-600 lang-af">18:00 – 21:00. Onderhoud en gesels.</p>
             <p class="text-sm text-gray-600 lang-en hidden">18:00 – 21:00. Entertainment and chat.</p>
           </li>
-          <li class="bg-white rounded-lg p-4 shadow-sm">
+          <li class="stagger-child bg-white rounded-lg p-4 shadow-sm hover-lift">
             <h3 class="font-semibold text-[#383840] mb-1">Weekend Vibes</h3>
             <p class="text-sm text-gray-600 lang-af">Saterdag & Sondag. Ontspan musiek.</p>
             <p class="text-sm text-gray-600 lang-en hidden">Saturday & Sunday. Relaxing music.</p>
@@ -74,21 +75,21 @@
       </div>
     </section>
 
-    <section class="w-full max-w-4xl mx-auto px-6 py-16">
+    <section class="w-full max-w-4xl mx-auto px-6 py-16 opacity-0 animate-fade-in-up animate-delay-4">
       <h2 class="text-2xl lg:text-3xl font-bold text-[#383840] mb-4">
         <span class="lang-af">Vol Programme Rooster</span>
         <span class="lang-en hidden">Full Program Schedule</span>
       </h2>
       <p class="text-[#383840]/90 mb-6 lang-af">Klik hier om ons volledige rooster te sien en te sien wanneer jou gunsteling programme uitgesaai word.</p>
       <p class="text-[#383840]/90 mb-6 lang-en hidden">Click here to view our full schedule and see when your favourite programs are broadcast.</p>
-      <a href="schedule.html" target="content-frame" class="inline-flex items-center justify-center px-6 py-3 rounded-lg font-montserrat font-semibold text-base bg-[#383840] text-white hover:bg-[#4a4a52] transition-colors">
+      <a href="schedule.html" target="content-frame" class="btn-glow inline-flex items-center justify-center px-6 py-3 rounded-lg font-montserrat font-semibold text-base bg-[#383840] text-white hover:bg-[#4a4a52] transition-colors">
         <span class="lang-af">Bekyk Rooster</span>
         <span class="lang-en hidden">View Schedule</span>
       </a>
     </section>
 
     <section class="w-full bg-[#383840] text-white py-16">
-      <div class="max-w-4xl mx-auto px-6">
+      <div class="max-w-4xl mx-auto px-6 opacity-0 animate-fade-in animate-delay-5">
         <h2 class="text-2xl lg:text-3xl font-bold mb-6">
           <span class="lang-af">Kontak Ons</span>
           <span class="lang-en hidden">Contact Us</span>
@@ -103,7 +104,7 @@
       </div>
     </section>
 
-    <footer class="w-full bg-black text-white/80 py-8">
+    <footer class="w-full bg-black text-white/80 py-8 opacity-0 animate-fade-in animate-delay-6">
       <div class="max-w-4xl mx-auto px-6 text-center text-sm">
         <p>© 2025 Radio Swartberg. <span class="lang-af">Jou stem uit die berge.</span><span class="lang-en hidden">Your voice from the mountains.</span></p>
       </div>

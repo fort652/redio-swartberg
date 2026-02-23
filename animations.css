@@ -1,0 +1,125 @@
+/* Radio Swartberg – shared animations */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(29, 185, 84, 0.35); }
+  50% { box-shadow: 0 0 0 12px rgba(29, 185, 84, 0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+.animate-delay-6 { animation-delay: 0.6s; }
+.animate-delay-7 { animation-delay: 0.7s; }
+.animate-delay-8 { animation-delay: 0.8s; }
+
+.opacity-0 { opacity: 0; }
+
+/* Hover lift for cards */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+}
+
+/* Button hover glow */
+.btn-glow {
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+.btn-glow:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(29, 185, 84, 0.4);
+}
+
+/* Hero overlay subtle pulse */
+@keyframes overlayPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 0.55; }
+}
+.hero-overlay-pulse {
+  animation: overlayPulse 4s ease-in-out infinite;
+}
+
+/* Stagger children (use on parent; children get .stagger-child) */
+.stagger-children .stagger-child { opacity: 0; animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+.stagger-children .stagger-child:nth-child(1) { animation-delay: 0.05s; }
+.stagger-children .stagger-child:nth-child(2) { animation-delay: 0.12s; }
+.stagger-children .stagger-child:nth-child(3) { animation-delay: 0.19s; }
+.stagger-children .stagger-child:nth-child(4) { animation-delay: 0.26s; }
+.stagger-children .stagger-child:nth-child(5) { animation-delay: 0.33s; }
+.stagger-children .stagger-child:nth-child(6) { animation-delay: 0.4s; }
+.stagger-children .stagger-child:nth-child(7) { animation-delay: 0.47s; }
+.stagger-children .stagger-child:nth-child(8) { animation-delay: 0.54s; }
+.stagger-children .stagger-child:nth-child(9) { animation-delay: 0.61s; }
+.stagger-children .stagger-child:nth-child(10) { animation-delay: 0.68s; }

@@ -11,11 +11,12 @@
     <script>
       tailwind.config = { theme: { extend: { fontFamily: { montserrat: ["Montserrat", "sans-serif"] } } } };
     </script>
+    <link rel="stylesheet" href="animations.css" />
   </head>
   <body class="font-montserrat m-0 p-0 min-h-screen flex flex-col pb-[100px]">
-    <div class="fixed top-4 right-4 z-20 flex items-center gap-1 bg-black/40 backdrop-blur-sm rounded-lg px-2 py-1.5">
-      <button type="button" id="lang-af" class="lang-toggle px-2 py-1 rounded text-sm font-semibold bg-white text-[#383840]" aria-pressed="true">AF</button>
-      <button type="button" id="lang-en" class="lang-toggle px-2 py-1 rounded text-sm font-semibold text-white hover:bg-white/20 transition-colors" aria-pressed="false">EN</button>
+    <div class="lang-toggle-wrap fixed top-4 right-4 z-20 flex items-center gap-1 bg-black/40 backdrop-blur-sm rounded-lg px-2 py-1.5 opacity-0 animate-scale-in" style="animation-delay: 0.2s; animation-fill-mode: forwards;">
+      <button type="button" id="lang-af" class="lang-toggle px-2 py-1 rounded text-sm font-semibold bg-white text-[#383840] transition-transform duration-200 hover:scale-105 active:scale-95" aria-pressed="true">AF</button>
+      <button type="button" id="lang-en" class="lang-toggle px-2 py-1 rounded text-sm font-semibold text-white hover:bg-white/20 transition-all duration-200 hover:scale-105 active:scale-95" aria-pressed="false">EN</button>
     </div>
 
     <div class="flex-1 min-h-0 flex flex-col">
@@ -33,11 +34,21 @@
 
     <div id="player-backdrop" class="fixed inset-0 bg-transparent z-30 opacity-0 pointer-events-none transition-opacity duration-[450ms] ease-[cubic-bezier(0.4,0,0.2,1)]" aria-hidden="true"></div>
     <style>
-      #player-panel { transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
+      #player-panel {
+        transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+        animation: slideUpPlayer 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+        transform: translateY(100%);
+      }
+      @keyframes slideUpPlayer {
+        to { transform: translateY(0); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #player-panel { animation: none; transform: translateY(0); }
+      }
       #player-drawer { transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1); }
       #player-drawer.drawer-open { transform: translateY(0); }
-      .player-spotify-green { background-color: #1DB954; }
-      .player-spotify-green:hover { background-color: #1ed760; }
+      .player-spotify-green { background-color: #1DB954; transition: transform 0.2s ease, background-color 0.2s ease; }
+      .player-spotify-green:hover { background-color: #1ed760; transform: scale(1.05); }
     </style>
     <div id="player-drawer" class="fixed inset-x-0 bottom-0 z-50 h-[85vh] max-h-[900px] rounded-t-3xl bg-[#121212] text-white shadow-2xl transform translate-y-full flex flex-col" aria-hidden="true">
       <div class="flex flex-col flex-1 min-h-0 px-6 pt-4 pb-8">
@@ -48,25 +59,10 @@
           <div class="w-56 h-56 sm:w-64 sm:h-64 rounded-lg bg-gradient-to-br from-[#282828] to-[#1a1a1a] flex items-center justify-center text-[#535353] font-bold text-4xl shadow-2xl mb-6 flex-shrink-0">RS</div>
           <p class="font-bold text-xl truncate w-full text-white mb-1" id="drawer-title">Middagtreffer – Live</p>
           <p class="text-sm truncate w-full text-[#b3b3b3] mb-8" id="drawer-subtitle">Radio Swartberg</p>
-          <div class="w-full mb-6">
-            <div class="h-1.5 bg-[#535353] rounded-full overflow-hidden">
-              <div id="drawer-progress" class="h-full rounded-full bg-[#1DB954] transition-[width] duration-300" style="width: 28%"></div>
-            </div>
-            <div class="flex justify-between text-xs text-[#b3b3b3] mt-1.5">
-              <span>0:00</span>
-              <span><span class="lang-af">Regstreeks</span><span class="lang-en hidden">Live</span></span>
-            </div>
-          </div>
           <div class="flex items-center justify-center gap-4">
-            <button type="button" class="p-3 rounded-full text-[#b3b3b3] hover:text-white hover:scale-110 transition-all" aria-label="Previous">
-              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-            </button>
             <button type="button" id="player-play-pause-drawer" class="w-16 h-16 rounded-full player-spotify-green text-black flex items-center justify-center hover:scale-105 transition-transform shadow-xl" aria-label="Play">
               <svg id="drawer-icon-pause" class="w-8 h-8 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
               <svg id="drawer-icon-play" class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-            <button type="button" class="p-3 rounded-full text-[#b3b3b3] hover:text-white hover:scale-110 transition-all" aria-label="Next">
-              <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
             </button>
           </div>
         </div>
@@ -78,23 +74,11 @@
         <div id="player-details" class="flex-1 min-w-0 flex flex-col justify-center gap-0.5">
           <p class="font-medium text-sm truncate text-white" id="player-now-title">Middagtreffer – Live</p>
           <p class="text-xs truncate text-[#b3b3b3]" id="player-now-subtitle">Radio Swartberg</p>
-          <div class="flex items-center gap-2 mt-1.5">
-            <div class="flex-1 h-1.5 bg-[#535353] rounded-full overflow-hidden min-w-0 max-w-xl">
-              <div id="player-progress" class="h-full rounded-full bg-[#1DB954] transition-[width] duration-300" style="width: 28%"></div>
-            </div>
-            <span class="text-[10px] text-[#b3b3b3] shrink-0 tabular-nums"><span class="lang-af">Regstreeks</span><span class="lang-en hidden">Live</span></span>
-          </div>
         </div>
         <div id="player-controls" class="shrink-0 flex items-center gap-1">
-          <button type="button" class="p-2 rounded-full text-[#b3b3b3] hover:text-white hover:scale-110 transition-all cursor-default" aria-label="Previous" data-no-drawer-open>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
-          </button>
           <button type="button" id="player-play-pause" class="shrink-0 w-10 h-10 rounded-full player-spotify-green text-black flex items-center justify-center hover:scale-105 transition-transform shadow-lg cursor-default" aria-label="Play" data-no-drawer-open>
             <svg id="player-icon-pause" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
             <svg id="player-icon-play" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-          </button>
-          <button type="button" class="p-2 rounded-full text-[#b3b3b3] hover:text-white hover:scale-110 transition-all cursor-default" aria-label="Next" data-no-drawer-open>
-            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
           </button>
         </div>
       </div>

@@ -11,16 +11,17 @@
     <script>
       tailwind.config = { theme: { extend: { fontFamily: { montserrat: ["Montserrat", "sans-serif"] } } } };
     </script>
+    <link rel="stylesheet" href="animations.css" />
   </head>
-  <body class="font-montserrat m-0 p-0 bg-gray-50">
+  <body class="font-montserrat m-0 p-0 bg-gray-50 overflow-x-hidden">
     <script>
       if (window.self === window.top) { window.location.replace("index.html#schedule"); }
     </script>
-    <header class="bg-[#121212] text-white py-4 shadow">
+    <header class="bg-[#121212] text-white py-4 shadow opacity-0 animate-slide-down">
       <div class="max-w-4xl mx-auto px-6 flex items-center gap-4">
-        <a href="home.html" target="content-frame" class="p-2 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors" aria-label="Back">
+        <a href="home.html" target="content-frame" class="p-2 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-all duration-300 hover:scale-110" aria-label="Back">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7 7"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
           </svg>
         </a>
         <h1 class="text-xl font-bold">
@@ -31,15 +32,15 @@
     </header>
 
     <main class="max-w-4xl mx-auto px-6 py-10">
-      <p class="text-[#383840]/80 mb-8 lang-af">
+      <p class="text-[#383840]/80 mb-8 lang-af opacity-0 animate-fade-in-up animate-delay-1">
         Volgende tye is Maandag–Vrydag, tensy anders aangedui. Weekend-programme verskil.
       </p>
-      <p class="text-[#383840]/80 mb-8 lang-en hidden">
+      <p class="text-[#383840]/80 mb-8 lang-en hidden opacity-0 animate-fade-in-up animate-delay-1">
         Times below are Monday–Friday unless stated. Weekend programming differs.
       </p>
 
-      <ul class="space-y-6">
-        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <ul class="space-y-6 stagger-children">
+        <li class="stagger-child bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift">
           <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
             <div class="flex flex-wrap items-baseline gap-2 mb-1">
               <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">06:00 – 09:00</span>
@@ -52,7 +53,7 @@
           </div>
         </li>
 
-        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <li class="stagger-child bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift">
           <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
             <div class="flex flex-wrap items-baseline gap-2 mb-1">
               <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">09:00 – 12:00</span>
@@ -65,7 +66,7 @@
           </div>
         </li>
 
-        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <li class="stagger-child bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift">
           <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
             <div class="flex flex-wrap items-baseline gap-2 mb-1">
               <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">12:00 – 15:00</span>
@@ -78,7 +79,7 @@
           </div>
         </li>
 
-        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <li class="stagger-child bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift">
           <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
             <div class="flex flex-wrap items-baseline gap-2 mb-1">
               <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">15:00 – 18:00</span>
@@ -91,7 +92,7 @@
           </div>
         </li>
 
-        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <li class="stagger-child bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift">
           <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
             <div class="flex flex-wrap items-baseline gap-2 mb-1">
               <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">18:00 – 21:00</span>
@@ -104,7 +105,7 @@
           </div>
         </li>
 
-        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <li class="stagger-child bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift">
           <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
             <div class="flex flex-wrap items-baseline gap-2 mb-1">
               <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">21:00 – 06:00</span>
@@ -117,7 +118,7 @@
           </div>
         </li>
 
-        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <li class="stagger-child bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover-lift">
           <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
             <div class="flex flex-wrap items-baseline gap-2 mb-1">
               <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">Saterdag & Sondag</span>
@@ -130,15 +131,15 @@
       </ul>
 
       <div class="mt-10 pt-8 border-t border-gray-200">
-        <a href="home.html" target="content-frame" class="inline-flex items-center gap-2 text-[#383840] font-semibold hover:text-[#1DB954] transition-colors">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7 7"/></svg>
+        <a href="home.html" target="content-frame" class="btn-glow inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg font-semibold text-base bg-[#383840] text-white hover:bg-[#4a4a52] transition-all duration-300 hover:scale-105 shadow-sm">
+          <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
           <span class="lang-af">Terug na tuisblad</span>
           <span class="lang-en hidden">Back to home</span>
         </a>
       </div>
     </main>
 
-    <footer class="w-full bg-black text-white/80 py-6 mt-12">
+    <footer class="w-full bg-black text-white/80 py-6 mt-12 opacity-0 animate-fade-in animate-delay-6">
       <div class="max-w-4xl mx-auto px-6 text-center text-sm">
         <p>© 2025 Radio Swartberg. <span class="lang-af">Jou stem uit die berge.</span><span class="lang-en hidden">Your voice from the mountains.</span></p>
       </div>
