@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="af">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rooster – Radio Swartberg</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { montserrat: ["Montserrat", "sans-serif"] } } } };
+    </script>
+  </head>
+  <body class="font-montserrat m-0 p-0 bg-gray-50">
+    <script>
+      if (window.self === window.top) { window.location.replace("index.html#schedule"); }
+    </script>
+    <header class="bg-[#121212] text-white py-4 shadow">
+      <div class="max-w-4xl mx-auto px-6 flex items-center gap-4">
+        <a href="home.html" target="content-frame" class="p-2 rounded-lg text-white/80 hover:bg-white/10 hover:text-white transition-colors" aria-label="Back">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7 7"/>
+          </svg>
+        </a>
+        <h1 class="text-xl font-bold">
+          <span class="lang-af">Programme Rooster</span>
+          <span class="lang-en hidden">Program Schedule</span>
+        </h1>
+      </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-10">
+      <p class="text-[#383840]/80 mb-8 lang-af">
+        Volgende tye is Maandag–Vrydag, tensy anders aangedui. Weekend-programme verskil.
+      </p>
+      <p class="text-[#383840]/80 mb-8 lang-en hidden">
+        Times below are Monday–Friday unless stated. Weekend programming differs.
+      </p>
+
+      <ul class="space-y-6">
+        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">06:00 – 09:00</span>
+              <span class="lang-af text-[10px] text-gray-500">Ma–Vr</span>
+              <span class="lang-en hidden text-[10px] text-gray-500">Mon–Fri</span>
+            </div>
+            <h2 class="text-lg font-bold text-[#383840] mb-2">Oggendreeks</h2>
+            <p class="text-sm text-gray-600 lang-af">Begin jou dag met musiek en nuus. Weer, verkeer en die beste oggend-treffers.</p>
+            <p class="text-sm text-gray-600 lang-en hidden">Start your day with music and news. Weather, traffic and the best morning hits.</p>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">09:00 – 12:00</span>
+              <span class="lang-af text-[10px] text-gray-500">Ma–Vr</span>
+              <span class="lang-en hidden text-[10px] text-gray-500">Mon–Fri</span>
+            </div>
+            <h2 class="text-lg font-bold text-[#383840] mb-2">Voormiddag</h2>
+            <p class="text-sm text-gray-600 lang-af">Ligte musiek en gesels. Bel in en groet die Karoo.</p>
+            <p class="text-sm text-gray-600 lang-en hidden">Light music and chat. Call in and say hi to the Karoo.</p>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">12:00 – 15:00</span>
+              <span class="lang-af text-[10px] text-gray-500">Ma–Vr</span>
+              <span class="lang-en hidden text-[10px] text-gray-500">Mon–Fri</span>
+            </div>
+            <h2 class="text-lg font-bold text-[#383840] mb-2">Middagtreffer</h2>
+            <p class="text-sm text-gray-600 lang-af">Jou gunsteling treffers deur die middag. Nuus op die uur.</p>
+            <p class="text-sm text-gray-600 lang-en hidden">Your favourite hits through the afternoon. News on the hour.</p>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">15:00 – 18:00</span>
+              <span class="lang-af text-[10px] text-gray-500">Ma–Vr</span>
+              <span class="lang-en hidden text-[10px] text-gray-500">Mon–Fri</span>
+            </div>
+            <h2 class="text-lg font-bold text-[#383840] mb-2">Namiddag</h2>
+            <p class="text-sm text-gray-600 lang-af">Musiek vir die rit huis toe. Sport en gemeenskapsnuus.</p>
+            <p class="text-sm text-gray-600 lang-en hidden">Music for the drive home. Sport and community news.</p>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">18:00 – 21:00</span>
+              <span class="lang-af text-[10px] text-gray-500">Ma–Vr</span>
+              <span class="lang-en hidden text-[10px] text-gray-500">Mon–Fri</span>
+            </div>
+            <h2 class="text-lg font-bold text-[#383840] mb-2">Saans met Swartberg</h2>
+            <p class="text-sm text-gray-600 lang-af">Onderhoud en gesels. Onderhoude, musiek en gesprekke met die gemeenskap.</p>
+            <p class="text-sm text-gray-600 lang-en hidden">Entertainment and chat. Interviews, music and conversation with the community.</p>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">21:00 – 06:00</span>
+              <span class="lang-af text-[10px] text-gray-500">Ma–Vr</span>
+              <span class="lang-en hidden text-[10px] text-gray-500">Mon–Fri</span>
+            </div>
+            <h2 class="text-lg font-bold text-[#383840] mb-2">Oornag</h2>
+            <p class="text-sm text-gray-600 lang-af">Stilte of herhaling. Saterdag en Sondag: Weekend Vibes deur die dag.</p>
+            <p class="text-sm text-gray-600 lang-en hidden">Overnight silence or repeats. Saturday and Sunday: Weekend Vibes through the day.</p>
+          </div>
+        </li>
+
+        <li class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+          <div class="p-4 sm:p-5 border-l-4 border-[#1DB954]">
+            <div class="flex flex-wrap items-baseline gap-2 mb-1">
+              <span class="text-xs font-semibold uppercase tracking-wider text-[#1DB954]">Saterdag & Sondag</span>
+            </div>
+            <h2 class="text-lg font-bold text-[#383840] mb-2">Weekend Vibes</h2>
+            <p class="text-sm text-gray-600 lang-af">Ontspan musiek en ligte onderhoud deur die naweek. Minder nuus, meer musiek.</p>
+            <p class="text-sm text-gray-600 lang-en hidden">Relaxing music and light entertainment over the weekend. Less news, more music.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="mt-10 pt-8 border-t border-gray-200">
+        <a href="home.html" target="content-frame" class="inline-flex items-center gap-2 text-[#383840] font-semibold hover:text-[#1DB954] transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7 7"/></svg>
+          <span class="lang-af">Terug na tuisblad</span>
+          <span class="lang-en hidden">Back to home</span>
+        </a>
+      </div>
+    </main>
+
+    <footer class="w-full bg-black text-white/80 py-6 mt-12">
+      <div class="max-w-4xl mx-auto px-6 text-center text-sm">
+        <p>© 2025 Radio Swartberg. <span class="lang-af">Jou stem uit die berge.</span><span class="lang-en hidden">Your voice from the mountains.</span></p>
+      </div>
+    </footer>
+  </body>
+</html>
